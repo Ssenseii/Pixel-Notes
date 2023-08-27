@@ -1,0 +1,15 @@
+html{
+  box-sizing: border-box;
+  font-size: 100%;
+  font-family: 'minecraft';
+}
+
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+ul{
+  list-style: none;
+}

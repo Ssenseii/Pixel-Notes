@@ -23,3 +23,19 @@
 
 - If we want multiple themes, it's possible using svgs and the fill function. I wonder if you can manipulate svg when they're being used as background images.
   => after looking into it: the way aseprite saves SVGs is by saving every single pixel in its own tag with its own color data. assuming you can change background-image's fill: you'd have to change each fragment's color data individually
+
+
+## Performance
+
+Goal: Sub 500ms.
+
+### Attempt #1 
+
+- TTFB: 72ms
+- Onload Time: 536 ms
+- First Contentful Paint: 553 ms
+- Largest Contentful Paint: 553ms
+- Time to Interactive: 553 ms
+- Fully Load Time: 961ms
+
+  => - Minifying resources

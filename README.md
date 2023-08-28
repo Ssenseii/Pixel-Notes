@@ -39,3 +39,47 @@ Goal: Sub 500ms.
 - Fully Load Time: 961ms
 
   => - Minifying resources
+
+### Attempt #2
+
+- TTFB: 131ms 
+- Onload Time: 393ms
+- FCP: 403ms
+- LCP: 403ms
+- TTI: 403ms
+- FLT: 1100ms
+
+ => Issues with Keep-alive? Minifying resources should have loared it though.
+
+- Adding Lighthouse testing + GTMetrix
+
+GTMETRIX: 
+
+- TTFB: 79ms
+- Onload Time: 159ms
+- FCP: 180ms
+- LCP: 180ms
+- TTI: 180ms
+- FLT: 594ms
+
+LIGHTHOUSE:
+
+Performance: 87
+Accessibility: 75
+Best Practices: 100
+SEO: 93
+
+
+???
+one more try
+
+GTMETRIX: 
+
+- TTFB: 81ms
+- ONLOAD time: 158ms
+- FCP: 175ms
+- LCP: 175ms
+- TTI: 175 ms
+- FLT: 906ms
+
+This is not so accurate. Must learn more on optimization.

@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   overflow: hidden;
 
@@ -17,6 +18,16 @@
     background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 10%;
+
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
   }
 
   &__input {
@@ -49,8 +60,16 @@
 
       font-size: 18px;
 
-      &:focus{
+      &:focus {
         background-image: url(../../assets/input-text-active.png);
+      }
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(1px);
       }
     }
 
@@ -67,8 +86,16 @@
 
       outline: none;
 
-      &:active{
+      &:active {
         background-image: url(../../assets/input-submit-active.png);
+      }
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(1px);
       }
 
     }
@@ -110,13 +137,25 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        gap: 1rem;
+
+        label {
+          width: 250px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          &::-webkit-scrollbar{
+            display: none;
+          }
+        }
 
 
         .todo-actions {
           width: 50px;
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
+          gap: 4px;
 
           button {
             cursor: pointer;
@@ -128,6 +167,10 @@
 
             &:active {
               scale: 0.9;
+            }
+
+            &:hover {
+              transform: translateY(-1px);
             }
           }
 
@@ -187,6 +230,7 @@
       background-image: url(../../assets/ul-tablet.png);
 
       padding: 1rem;
+
       ul {
 
 
@@ -210,7 +254,59 @@
 }
 
 @media screen and (min-width: 1024px) {
-  /// I'm leaving the tablet Ui as desktop UI for now
+  .todo {
+    width: 400px;
+    height: 100%;
+
+    &__title {
+      width: 221px;
+      height: 74px;
+    }
+
+    &__input {
+
+      &-text {
+        width: 276px;
+        height: 45px;
+        font-size: 18px;
+        padding-inline: 1rem;
+      }
+
+      &-button {
+        width: 77px;
+        height: 35px;
+      }
+    }
+
+    &__list {
+      height: 536px;
+      width: 355px;
+
+      background-image: url(../../assets/ul.png);
+
+      padding: 1rem;
+
+      ul {
+
+
+        .todo-item {
+          height: 48px;
+          font-size: 18px;
+
+          .todo-actions {
+            width: 52px;
+
+            button {
+              height: 24px;
+              width: 24px;
+
+            }
+
+          }
+        }
+      }
+    }
+  }
 }
 
 /// small height screens

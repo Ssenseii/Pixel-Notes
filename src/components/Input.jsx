@@ -12,7 +12,7 @@ const Input = ({ todo, setTodo, addTodo }) => {
           setTodo(e.target.value);
         }}
       />
-      <button className="todo__input-button" onClick={addTodo}></button>
+      <button name="add-button" className="todo__input-button" onClick={addTodo}></button>
     </form>
   );
 };

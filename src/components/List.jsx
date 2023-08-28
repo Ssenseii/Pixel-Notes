@@ -15,8 +15,9 @@ const List = ({ list, checked }) => {
             
             <div className="todo-actions">
               {/* input checkbox won't work with background image */}
-              <button id="checkbox" className="checkbox"></button>
+              <button name="checkbox" id="checkbox" className="checkbox"></button>
               <button
+                name="delete-button"
                 className="delete"
                 onClick={() => {
                   deleteDoc(doc(db, "todos", item.id));

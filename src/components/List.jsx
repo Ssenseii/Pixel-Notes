@@ -3,7 +3,7 @@ import { deleteDoc, doc } from "firebase/firestore"
 import {db} from '../firebase'
 
 
-const List = ({ list }) => {
+const List = ({ list, checked }) => {
   
   return (
     <div className="todo__list">

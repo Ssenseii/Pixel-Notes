@@ -8,7 +8,6 @@ const Input = ({ todo, setTodo, addTodo }) => {
         type="text"
         name="todo"
         value={todo}
-        placeholder="add todo..."
         onChange={(e) => {
           setTodo(e.target.value);
         }}

@@ -4,6 +4,8 @@
 - Customizing Scrollbars (though not apparent since I opted for noscrollbar)
 - Checkboxes don't take background-image.
 - HTMLLabel property: "htmlFor" needs an id.
+- Carets cannot be resized but you can set their color (still very much unsupported though. better not touch it)
+- Focus works with input
 
 ## Ideas
 
@@ -13,7 +15,9 @@
 
 ## Problems
 
-- Layout issues
+- Layout issues -> fixed
+- Loading animation for notes - async loading?
+- 
 
 ## Thoughts
 

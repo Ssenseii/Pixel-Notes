@@ -16,15 +16,18 @@ const Signup = () => {
   }
 
   return (
-    <form className="signup" onSubmit={signup}>
+    <form id="signout" className="signup" onSubmit={signup}>
       <input
+        name="email"
         className="signup__email"
         value={email}
         type="email"
         placeholder="Email..."
         onChange={(e) => setEmail(e.target.value)}
+        autoComplete="false"
       />
       <input
+        name="password"
         className="signup__password"
         value={password}
         type="password"

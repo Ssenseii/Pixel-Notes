@@ -6,12 +6,21 @@
 - HTMLLabel property: "htmlFor" needs an id.
 - Carets cannot be resized but you can set their color (still very much unsupported though. better not touch it)
 - Focus works with input
+- Autocomplete and data attributes for forms (I can make better forms now I suppose, though I haven't done so here)
+- catching errors (still gotta work on defining them)
+
 
 ## Ideas
 
 - Stress button functionality with title div
 - Animations
 - top left notifications
+- Themes
+- Authentification
+- Cloud storage
+- Editable Notes
+- Scalable architecture
+- Customization Panel
 
 ## Problems
 

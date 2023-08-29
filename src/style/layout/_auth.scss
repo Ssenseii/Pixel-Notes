@@ -26,6 +26,10 @@
       @include Center;
       flex-direction: column;
 
+      .signinError{
+        background-image: url(../../assets/input-text-error.png) !important;
+      }
+
       &__email,
       &__password {
         background-image: url(../../assets/input-text.png);
@@ -163,8 +167,8 @@
     z-index: 10;
     height: 44px;
     width: 88px;
-    top: 5%;
-    right: 5%;
+    top: 1%;
+    right: 1%;
     background-color: transparent;
     border: none;
     background-image: url(../../assets/logout.png);
@@ -182,3 +186,4 @@
     }
   }
 }
+

@@ -83,3 +83,8 @@ GTMETRIX:
 - FLT: 906ms
 
 This is not so accurate. Must learn more on optimization.
+
+Z-indexes: 
+  - Main: 1
+  - Auth: 2
+  - Signout: 10

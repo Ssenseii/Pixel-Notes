@@ -1,55 +1,36 @@
 import React, { useState, useEffect } from "react";
-import Input from "./components/Input";
-import List from "./components/List";
-
-import { db } from "./firebase";
-import {
-  collection,
-  onSnapshot,
-  serverTimestamp,
-  addDoc,
-  query,
-  orderBy,
-} from "firebase/firestore";
-
-const q = query(collection(db, "todos"), orderBy("timestamp", "desc"));
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase";
+import Main from "./pages/Main";
+import Auth from "./pages/Auth";
+import Signout from "./components/auth/Signout";
 
 function App() {
-  const [todos, setTodos] = useState([]);
-  const [input, setInput] = useState("");
-
-  /// database 
+  const [authUser, setAuthUser] = useState(null);
 
   useEffect(() => {
-    onSnapshot(q, (snapshot) => {
-      setTodos(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          item: doc.data(),
-        }))
-      );
+    const listen = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAuthUser(user);
+      } else {
+        setAuthUser(null);
+      }
     });
-  }, [input]);
 
-  const addTodo = (e) => {
-    e.preventDefault();
-
-    if (input !== "") {
-      addDoc(collection(db, "todos"), {
-        todo: input,
-        timestamp: serverTimestamp(),
-      });
-      setInput("");
-    }
-  };
+    return () => {
+      listen();
+    };
+  }, []);
 
   return (
     <div className="app">
-      <div className="todo">
-        <div className="todo__title"></div>
-        <Input todo={input} setTodo={setInput} addTodo={addTodo}></Input>
-        <List list={todos}></List>
-      </div>
+      {authUser ? (
+        <>
+          <Signout /> <Main />
+        </>
+      ) : (
+        <Auth />
+      )}
     </div>
   );
 }
